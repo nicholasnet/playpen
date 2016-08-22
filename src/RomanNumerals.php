@@ -15,7 +15,8 @@ namespace Playpen;
 class RomanNumerals
 {
     /**
-     * Map for number lookup. This requires PHP 5.6
+     * Map for roman number lookup. This requires PHP 5.6 since array is not literal type to be used as constant
+     * in PHP < 5.6
      */
     const LOOKUP_MAP = [
         1000   => 'M',
@@ -73,8 +74,9 @@ class RomanNumerals
 
             while ($input >= $key) {
 
-                $result .= $value;
+                $result = $result . $value;
                 $input = $input - $key;
+
             }
         }
 
@@ -82,9 +84,13 @@ class RomanNumerals
     }
 
     /**
+     * This method validates the input if input is not valid it will throw an exception. In order to be a valid input
+     * it must be numeric and must be more than 0 and less than 5000.
      *
+     * @param $input
      *
-     * @param mixed $input
+     * @throws \InvalidArgumentException
+     * @throws \OutOfRangeException
      */
     private static function validateInput($input)
     {
