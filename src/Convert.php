@@ -94,7 +94,7 @@ class Convert
      *
      * @return bool
      */
-    private function isValidValue($value)
+    private static function isValidValue($value)
     {
         $validValues = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 
