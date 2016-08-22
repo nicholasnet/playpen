@@ -20,7 +20,7 @@ class Convert
      * Constraints
      *      Cannot use typecasting.
      *      Cannot use builtin language functions.
-     *      Cannot use use explicit multiplication.
+     *      Cannot use explicit multiplication.
      *
      * Error handling
      *      Must throw an exception for invalid values.
