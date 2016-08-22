@@ -31,7 +31,7 @@ class Str
         // In this function we will ignore case if $caseSensitive is true else not.
 
         // If no input is given or value given is boolean then there is nothing to check.
-        if (empty($parameter) || ($parameter === true)) {
+        if (empty($parameter) || !is_string($parameter)) {
 
             return false;
 
@@ -40,14 +40,14 @@ class Str
         $parameterLength = mb_strlen($parameter);
 
         // If string is of single length then it is palindrome no need to check further.
-        if ($parameterLength === 1) {
+        if (1 === $parameterLength) {
 
             return true;
 
         }
 
         // Normalize the string if necessary.
-        $parameter = ($caseSensitive === false) ? mb_strtolower($parameter, 'UTF-8') : $parameter;
+        $parameter = (false === $caseSensitive) ? mb_strtolower($parameter, 'UTF-8') : $parameter;
         $startIndex = 0;
         $endIndex = $parameterLength - 1;
 

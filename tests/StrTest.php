@@ -14,11 +14,8 @@ class StrTest extends PHPUnit_Framework_TestCase
      */
     public function checks_if_string_is_palindrome_without_ignoring_the_case()
     {
-        $this->assertFalse(Str::isPalindrome('name', true));
         $this->assertFalse(Str::isPalindrome('leveL', true));
         $this->assertTrue(Str::isPalindrome('level', true));
-        $this->assertTrue(Str::isPalindrome('ll', true));
-        $this->assertTrue(Str::isPalindrome('22', true));
     }
 
     /**
@@ -53,5 +50,28 @@ class StrTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(Str::isPalindrome('lööl'));
         $this->assertFalse(Str::isPalindrome('Éleelé', true));
         $this->assertFalse(Str::isPalindrome('Héllöö'));
+    }
+
+    /**
+     * @test
+     * @dataProvider getInvalidInputs
+     *
+     * @param string $input
+     */
+    public function throws_exception_for_invalid_argument($input)
+    {
+        $this->assertFalse(Str::isPalindrome($input));
+    }
+
+    /**
+     * @return array
+     */
+    public function getInvalidInputs()
+    {
+        return [
+            'with empty string'     => [''],
+            'with null values'      => [null],
+            'with incorrect type'   => [true]
+        ];
     }
 }

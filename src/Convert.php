@@ -35,8 +35,8 @@ class Convert
      */
     public static function atoi($parameter)
     {
-        // First check if any valid parameter is given if not throw exception.
-        if ($parameter === null || $parameter === '') {
+        // First check if any valid parameter is given if not throw exception. Cannot use empty here.
+        if (null === $parameter || '' === $parameter) {
 
             throw new \InvalidArgumentException('Parameter given is not a valid parameter');
 
@@ -56,14 +56,14 @@ class Convert
         // In strict mode this may throw notice so suppress it since we cannot use native isset function here.
         for ($position = 0; @$parameter[$position] !== ''; $position++) {
 
-            if (($position === 0) && $parameter[$position] === '-') {
+            if ( (0 === $position) && ('-' === $parameter[$position]) ) {
 
                 $isNegative = true;
 
                 continue;
             }
 
-            if (self::isValidValue($parameter[$position]) === false) {
+            if (false === self::isValidValue($parameter[$position])) {
 
                 throw new \InvalidArgumentException('Parameter given is not a valid parameter ' . $parameter);
 
