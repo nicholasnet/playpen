@@ -3,7 +3,7 @@
 namespace Playpen;
 
 /**
- * Class AsciiToInt
+ * Class Convert
  *
  * @package Playpen
  *
