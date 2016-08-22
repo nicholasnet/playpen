@@ -32,7 +32,7 @@ class RomanNumerals
         5      => 'V',
         4      => 'IV',
         1      => 'I',
-        '0.91' => 'S.....',
+        '0.91' => 'S.....', // Adding more intervals so that we will have to loop less.
         '0.83' => 'S....',
         '0.75' => 'S...',
         '0.66' => 'S..',
@@ -43,7 +43,7 @@ class RomanNumerals
         '0.25' => '...',
         '0.16' => '..',
         '0.08' => '.',
-        '0.04' => 'T', // T as Tiny though its not standard letter in duo decimal system
+        '0.04' => 'T', // T as Tiny though its not standard letter in duo decimal system.
     ];
 
     /**
