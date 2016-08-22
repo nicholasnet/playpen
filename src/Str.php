@@ -16,9 +16,6 @@ class Str
      *      Must use constant memory O(1)
      *      Accessing each character in the string only once.
      *
-     * Limitations:
-     *      This method only works for ASCII characters.
-     *
      * @param string  $parameter     String to check whether it is palindrome or not.
      * @param bool    $caseSensitive Flag that tells whether to ignore case or not.
      *
@@ -33,30 +30,32 @@ class Str
         //
         // In this function we will ignore case if $caseSensitive is true else not.
 
-        // If no input is given or value given is boolean then nothing to check.
+        // If no input is given or value given is boolean then there is nothing to check.
         if (empty($parameter) || ($parameter === true)) {
 
             return false;
 
         }
 
-        $length = strlen($parameter);
+        $parameterLength = mb_strlen($parameter);
 
         // If string is of single length then it is palindrome no need to check further.
-        if ($length === 1) {
+        if ($parameterLength === 1) {
 
             return true;
 
         }
 
-        $parameter = ($caseSensitive === false) ? strtolower($parameter) : $parameter; // Normalize the string if necessary.
+        // Normalize the string if necessary.
+        $parameter = ($caseSensitive === false) ? mb_strtolower($parameter, 'UTF-8') : $parameter;
         $startIndex = 0;
-        $endIndex = $length - 1;
+        $endIndex = $parameterLength - 1;
 
         while ($startIndex < $endIndex) {
 
-            // Check if value of left index is equal to corresponding right index.
-            if ($parameter[$startIndex] !== $parameter[$endIndex]) {
+            // Check if value of left index is equal to corresponding right index. We are using mb function here to
+            // support UTF-8 characters.
+            if (mb_substr($parameter, $startIndex, 1, 'UTF-8') !== mb_substr($parameter, $endIndex, 1, 'UTF-8')) {
 
                 return false;
 

@@ -42,4 +42,16 @@ class StrTest extends PHPUnit_Framework_TestCase
         $this->assertFalse(Str::isPalindrome(null));
         $this->assertFalse(Str::isPalindrome(true));
     }
+
+    /**
+     * @test
+     */
+    public function checks_for_special_characters()
+    {
+        $this->assertFalse(Str::isPalindrome('Éle'));
+        $this->assertTrue(Str::isPalindrome('Éleelé'));
+        $this->assertTrue(Str::isPalindrome('lööl'));
+        $this->assertFalse(Str::isPalindrome('Éleelé', true));
+        $this->assertFalse(Str::isPalindrome('Héllöö'));
+    }
 }
