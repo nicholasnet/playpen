@@ -42,7 +42,7 @@ class RomanNumerals
         '0.25' => '...',
         '0.16' => '..',
         '0.08' => '.',
-        '0.04' => 'T', // T as Tiny though its not standard
+        '0.04' => 'T', // T as Tiny though its not standard letter in duo decimal system
     ];
 
     /**
