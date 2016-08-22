@@ -78,7 +78,13 @@ class Convert
     }
 
     /**
-     * @param $numberToMultiply
+     * This method multiplies the given number by 10 without using explicit multiplication. Since we cannot use explicit
+     * multiplication we will use bit shift left.
+     * First we will bit shift left the value by 3 then add the given value twice.
+     *
+     * For example if the given value is 5 then (5 << 3) will give us 40 then will add input twice that is (5 + 5)
+     *
+     * @param int $numberToMultiply Number to multiply by 10.
      *
      * @return int
      */

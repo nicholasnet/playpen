@@ -19,6 +19,7 @@ class ConvertTest extends PHPUnit_Framework_TestCase
         $this->assertSame(0, Convert::atoi('0'));
         $this->assertSame(500, Convert::atoi('500'));
         $this->assertSame(1000, Convert::atoi('1000'));
+        $this->assertSame(1, Convert::atoi('00001'));
     }
 
     /**
