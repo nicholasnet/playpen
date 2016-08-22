@@ -90,7 +90,7 @@ class Convert
      */
     public static function multiplyNumberByTen($numberToMultiply)
     {
-        return ($numberToMultiply << 3) + ($numberToMultiply + $numberToMultiply);
+        return ($numberToMultiply << 3) + $numberToMultiply + $numberToMultiply;
     }
 
     /**
