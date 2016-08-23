@@ -3,7 +3,10 @@
 namespace Playpen;
 
 /**
- * Class Convert
+ * Class Convert which have utility method to convert ascii to integer.
+ *
+ * Since this class does not need any states nor it mutates any state and does not to be passed to other class and does
+ * not need to implement any interface. Hence all methods inside the class are static.
  *
  * @package Playpen
  *

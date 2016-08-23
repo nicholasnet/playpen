@@ -33,7 +33,7 @@ class AckermannTest extends PHPUnit_Framework_TestCase
      */
     public function computes_value_non_recursively($m, $n, $expectedValues)
     {
-        A::clearCache();
+        A::clearCache(); // Clear cache since we are running recursive and non-recursive in the same test.
         $this->assertEquals($expectedValues, A::computeNonRecursively($m, $n));
     }
 

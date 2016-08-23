@@ -10,6 +10,9 @@ namespace Playpen;
 /**
  * Class RomanNumerals
  *
+ * Since this class does not need any states nor it mutates any state and does not to be passed to other class and does
+ * not need to implement any interface. Hence all methods inside the class are static.
+ *
  * @package Playpen
  */
 class RomanNumerals
@@ -68,12 +71,12 @@ class RomanNumerals
         // For example we cannot say 2.500 = II.D (which would be incorrect)
         //
         // Another approach I was thinking is to use different encoding for number before decimal and after like
-        // 2.1 = IIO (Here O refers to 1 after decimal)
-        // Advantage of this approach is the precision but it is very confusing to use 2 types of encoding for same number.
+        // 2.1 = IIE Here E refers to 1 after decimal)
+        // Advantage of this approach is the precision but it is very confusing to use 2 types of encoding for same
+        // number.
         //
-        // Since we are already using character map I think using duo decimal scheme is more appropriate here. In that way
-        // we do not have to change anything and just use the map.
-
+        // Since we are already using character map I think using duo decimal scheme is more appropriate here. In that
+        // way we do not have to change anything and just use the map.
         $result = '';
 
         foreach (self::LOOKUP_MAP as $key => $value) {

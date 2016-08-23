@@ -8,7 +8,12 @@
 namespace Playpen;
 
 /**
- * Class Ackermann
+ * Class Ackermann which computes the Ackermann function using recursive and non-recursive method. Since Ackermann
+ * function grows very fast user may experience time out or memory exhaust or simply get Infinity (INF) result with large
+ * number.
+ *
+ * Since this class does not need any states nor it mutates any state and does not to be passed to other class and does
+ * not need to implement any interface. Hence all methods inside the class are static.
  *
  * @package Playpen
  */
@@ -22,7 +27,7 @@ class Ackermann
     protected static $resultCache = [];
 
     /**
-     * This function computes Ackermann function recursively given m >= 0 and n >= 0
+     * This function computes Ackermann function recursively given m >= 0 and n >= 0.
      *
      * @param int $m
      * @param int $n

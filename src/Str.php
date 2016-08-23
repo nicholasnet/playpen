@@ -7,6 +7,13 @@
 
 namespace Playpen;
 
+/**
+ * Class Str which is a utility class that checks whether given string is palindrome or not.
+ * Since this class does not need any states nor it mutates any state and does not to be passed to other class and does
+ * not need to implement any interface. Hence all methods inside the class are static.
+ *
+ * @package Playpen
+ */
 class Str
 {
     /**
