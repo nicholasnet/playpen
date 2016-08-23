@@ -83,13 +83,6 @@ class Ackermann
      */
     private function applyAckermannFormula($m, $n)
     {
-        // Lets check the cache first if values is in cache then no need to compute.
-        if (isset(self::$resultCache[$m][$n])) {
-
-            return;
-
-        }
-
         switch ($m) {
 
             case 0:
