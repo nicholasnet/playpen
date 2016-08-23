@@ -48,7 +48,7 @@ class Convert
         // result and return.
         // For example if input is '2'. Then we will multiply the position (0 in this case) by 10 and add the number (2)
         // In the process we will check for any invalid parameter if we have any then we will throw an exception.
-
+        //
         // We will assume that value is positive by default.
         $isNegative = false;
         $result = 0;
