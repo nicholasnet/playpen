@@ -61,10 +61,16 @@ class RomanNumerals
 
         // We all know converting whole number to roman numeral is predefined so that is not the issue.
         // However, converting decimals is different.
+        //
         // At first thought I was thinking to convert the decimal just like integer something like
         // 2.5 => II.V
         // But the problem with this approach is the zeros.
         // For example we cannot say 2.500 = II.D (which would be incorrect)
+        //
+        // Another approach I was thinking is to use different encoding for number before decimal and after like
+        // 2.1 = IIO (Here O refers to 1 after decimal)
+        // Advantage of this approach is the precision but it is very confusing to use 2 types of encoding for same number.
+        //
         // Since we are already using character map I think using duo decimal scheme is more appropriate here. In that way
         // we do not have to change anything and just use the map.
 
